@@ -4,8 +4,8 @@ Release:        1%{?dist}
 Summary:        YouTube browser for SMPlayer
 
 License:        GPLv2+
-URL:            http://www.smtube.org
-Source0:        http://downloads.sourceforge.net/smtube/smtube-%{version}.tar.bz2
+URL:            https://www.smtube.org
+Source0:        https://downloads.sourceforge.net/smtube/smtube-%{version}.tar.bz2
 Patch3:         smtube-18.11.0-system-qtsingleapplication.patch
 
 BuildRequires:  qt5-qtbase-devel
