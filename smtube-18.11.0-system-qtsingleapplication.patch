@@ -1,7 +1,6 @@
---- ./src/smtube.pro.orig	2018-10-21 21:26:43.000000000 +0100
-+++ ./src/smtube.pro	2019-01-28 23:30:30.552083907 +0000
-@@ -1,6 +1,7 @@
- 
+--- ./src/smtube.pro.orig	2020-06-19 12:02:59.047658202 +0100
++++ ./src/smtube.pro	2020-06-19 12:04:57.370202021 +0100
+@@ -1,5 +1,6 @@
  TEMPLATE = app
  QT += network
 +INCLUDEPATH += qtsingleapplication
@@ -9,9 +8,9 @@
  CONFIG += release
  #CONFIG += debug
 @@ -9,6 +10,7 @@ DEFINES += USE_PLAYERS
- DEFINES += YT_USE_SIG
- #DEFINES += D_BUTTON
  DEFINES += STYLE_SWITCHING
+ DEFINES += CODEDOWNLOADER
+ DEFINES += USE_SITES
 +DEFINES += USE_SINGLE_APPLICATION
  
  # If Qt >= 5.4

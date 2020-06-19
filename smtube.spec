@@ -1,5 +1,5 @@
 Name:           smtube
-Version:        20.1.0
+Version:        20.6.0
 Release:        1%{?dist}
 Summary:        YouTube browser for SMPlayer
 
@@ -90,6 +90,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Fri Jun 19 2020 Sérgio Basto <sergio@serjux.com> - 20.6.0-1
+- Update smtube to 20.6.0
+
 * Sun Jan 26 2020 Sérgio Basto <sergio@serjux.com> - 20.1.0-1
 - Update smtube to 20.1.0
 
