@@ -1,12 +1,11 @@
 Name:           smtube
-Version:        20.6.0
-Release:        4%{?dist}
+Version:        21.7.0
+Release:        1%{?dist}
 Summary:        YouTube browser for SMPlayer
 
 License:        GPLv2+
 URL:            https://www.smtube.org
 Source0:        https://downloads.sourceforge.net/smtube/smtube-%{version}.tar.bz2
-Patch3:         smtube-18.11.0-system-qtsingleapplication.patch
 
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qt5-qttools-devel
@@ -18,13 +17,11 @@ BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(Qt5PrintSupport)
-BuildRequires:  pkgconfig(Qt5Script)
+#BuildRequires:  pkgconfig(Qt5Script)
 BuildRequires:  pkgconfig(Qt5Sql)
 BuildRequires:  pkgconfig(Qt5WebKitWidgets)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Xml)
-# for unbundle sources
-BuildRequires:  qtsingleapplication-qt5-devel
 
 Requires:       hicolor-icon-theme
 %if 0%{?fedora} || 0%{?rhel} > 7
@@ -42,13 +39,8 @@ and play YouTube videos.
 
 %prep
 %setup -q
-rm -rf src/qtsingleapplication/
-%patch3 -p1 -b .qtsingleapplication
 # correction for wrong-file-end-of-line-encoding
 %{__sed} -i 's/\r//' *.txt
-# fix files which are not UTF-8
-iconv -f Latin1 -t UTF-8 -o Changelog.utf8 Changelog
-mv Changelog.utf8 Changelog
 
 %build
 pushd src
@@ -90,6 +82,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Mon Aug 16 2021 Sérgio Basto <sergio@serjux.com> - 21.7.0-1
+- Update smtube to 21.7.0
+
 * Tue Aug 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 20.6.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
