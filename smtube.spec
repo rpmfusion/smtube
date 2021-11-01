@@ -1,5 +1,5 @@
 Name:           smtube
-Version:        21.7.0
+Version:        21.10.0
 Release:        1%{?dist}
 Summary:        YouTube browser for SMPlayer
 
@@ -82,6 +82,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Mon Nov 01 2021 Sérgio Basto <sergio@serjux.com> - 21.10.0-1
+- Update smtube to 21.10.0
+
 * Mon Aug 16 2021 Sérgio Basto <sergio@serjux.com> - 21.7.0-1
 - Update smtube to 21.7.0
 

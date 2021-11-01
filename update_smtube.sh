@@ -1,5 +1,5 @@
-version=20.6.0
-REPOS="f32 f31 el8 el7"
+version=21.10.0
+REPOS="f35 f34 f33 el8 el7"
 
 if [ -z "$1" ]
 then
