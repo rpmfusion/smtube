@@ -1,6 +1,6 @@
 Name:           smtube
 Version:        21.10.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        YouTube browser for SMPlayer
 
 License:        GPLv2+
@@ -30,6 +30,11 @@ Recommends:     smplayer
 Requires:       smplayer
 %endif
 
+%if 0%{?fedora}
+# we only have yt-dlp on fedora
+Requires:       yt-dlp
+%endif
+
 %{?kf5_kinit_requires}
 #translating kf5_kinit_requires -> Requires: kf5-kinit(x86-64)
 
@@ -41,9 +46,13 @@ and play YouTube videos.
 %setup -q
 # correction for wrong-file-end-of-line-encoding
 %{__sed} -i 's/\r//' *.txt
+rm -r src/qt-json/
 
 %build
 pushd src
+%if 0%{?fedora}
+    sed -i 's/DEFINES += CODEDOWNLOADER/DEFINES -= CODEDOWNLOADER/' smtube.pro
+%endif
     %{qmake_qt5}
     %make_build TRANSLATION_PATH="\\\"%{_datadir}/smtube/translations\\\""
     %{_bindir}/lrelease-qt5 smtube.pro
@@ -82,6 +91,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Thu Dec 30 2021 Sérgio Basto <sergio@serjux.com> - 21.10.0-2
+- After require install yt-dlp, we disable "donwload and install yt-dlp" feature
+
 * Mon Nov 01 2021 Sérgio Basto <sergio@serjux.com> - 21.10.0-1
 - Update smtube to 21.10.0
 
