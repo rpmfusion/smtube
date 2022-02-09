@@ -1,6 +1,6 @@
 Name:           smtube
 Version:        21.10.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        YouTube browser for SMPlayer
 
 License:        GPLv2+
@@ -91,6 +91,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Wed Feb 09 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 21.10.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Thu Dec 30 2021 Sérgio Basto <sergio@serjux.com> - 21.10.0-2
 - After require install yt-dlp, we disable "donwload and install yt-dlp" feature
 
