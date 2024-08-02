@@ -1,6 +1,6 @@
 Name:           smtube
 Version:        21.10.0
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        YouTube browser for SMPlayer
 
 License:        GPLv2+
@@ -91,6 +91,9 @@ fi
 %{_docdir}/%{name}/
 
 %changelog
+* Fri Aug 02 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 21.10.0-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
 * Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 21.10.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
